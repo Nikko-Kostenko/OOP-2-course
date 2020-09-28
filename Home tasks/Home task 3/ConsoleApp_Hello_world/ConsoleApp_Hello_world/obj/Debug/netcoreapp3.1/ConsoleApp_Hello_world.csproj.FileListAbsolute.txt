@@ -1,0 +1,13 @@
+C:\Users\f18ra\source\repos\ConsoleApp_Hello_world\ConsoleApp_Hello_world\bin\Debug\netcoreapp3.1\ConsoleApp_Hello_world.exe
+C:\Users\f18ra\source\repos\ConsoleApp_Hello_world\ConsoleApp_Hello_world\bin\Debug\netcoreapp3.1\ConsoleApp_Hello_world.deps.json
+C:\Users\f18ra\source\repos\ConsoleApp_Hello_world\ConsoleApp_Hello_world\bin\Debug\netcoreapp3.1\ConsoleApp_Hello_world.runtimeconfig.json
+C:\Users\f18ra\source\repos\ConsoleApp_Hello_world\ConsoleApp_Hello_world\bin\Debug\netcoreapp3.1\ConsoleApp_Hello_world.runtimeconfig.dev.json
+C:\Users\f18ra\source\repos\ConsoleApp_Hello_world\ConsoleApp_Hello_world\bin\Debug\netcoreapp3.1\ConsoleApp_Hello_world.dll
+C:\Users\f18ra\source\repos\ConsoleApp_Hello_world\ConsoleApp_Hello_world\bin\Debug\netcoreapp3.1\ConsoleApp_Hello_world.pdb
+C:\Users\f18ra\source\repos\ConsoleApp_Hello_world\ConsoleApp_Hello_world\obj\Debug\netcoreapp3.1\ConsoleApp_Hello_world.csprojAssemblyReference.cache
+C:\Users\f18ra\source\repos\ConsoleApp_Hello_world\ConsoleApp_Hello_world\obj\Debug\netcoreapp3.1\ConsoleApp_Hello_world.AssemblyInfoInputs.cache
+C:\Users\f18ra\source\repos\ConsoleApp_Hello_world\ConsoleApp_Hello_world\obj\Debug\netcoreapp3.1\ConsoleApp_Hello_world.AssemblyInfo.cs
+C:\Users\f18ra\source\repos\ConsoleApp_Hello_world\ConsoleApp_Hello_world\obj\Debug\netcoreapp3.1\ConsoleApp_Hello_world.csproj.CoreCompileInputs.cache
+C:\Users\f18ra\source\repos\ConsoleApp_Hello_world\ConsoleApp_Hello_world\obj\Debug\netcoreapp3.1\ConsoleApp_Hello_world.dll
+C:\Users\f18ra\source\repos\ConsoleApp_Hello_world\ConsoleApp_Hello_world\obj\Debug\netcoreapp3.1\ConsoleApp_Hello_world.pdb
+C:\Users\f18ra\source\repos\ConsoleApp_Hello_world\ConsoleApp_Hello_world\obj\Debug\netcoreapp3.1\ConsoleApp_Hello_world.genruntimeconfig.cache
