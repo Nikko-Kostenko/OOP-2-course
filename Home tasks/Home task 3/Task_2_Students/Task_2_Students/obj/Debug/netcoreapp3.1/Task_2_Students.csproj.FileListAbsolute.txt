@@ -1,0 +1,13 @@
+C:\Users\f18ra\source\repos\Task_2_Students\Task_2_Students\obj\Debug\netcoreapp3.1\Task_2_Students.csprojAssemblyReference.cache
+C:\Users\f18ra\source\repos\Task_2_Students\Task_2_Students\obj\Debug\netcoreapp3.1\Task_2_Students.AssemblyInfoInputs.cache
+C:\Users\f18ra\source\repos\Task_2_Students\Task_2_Students\obj\Debug\netcoreapp3.1\Task_2_Students.AssemblyInfo.cs
+C:\Users\f18ra\source\repos\Task_2_Students\Task_2_Students\obj\Debug\netcoreapp3.1\Task_2_Students.csproj.CoreCompileInputs.cache
+C:\Users\f18ra\source\repos\Task_2_Students\Task_2_Students\bin\Debug\netcoreapp3.1\Task_2_Students.exe
+C:\Users\f18ra\source\repos\Task_2_Students\Task_2_Students\bin\Debug\netcoreapp3.1\Task_2_Students.deps.json
+C:\Users\f18ra\source\repos\Task_2_Students\Task_2_Students\bin\Debug\netcoreapp3.1\Task_2_Students.runtimeconfig.json
+C:\Users\f18ra\source\repos\Task_2_Students\Task_2_Students\bin\Debug\netcoreapp3.1\Task_2_Students.runtimeconfig.dev.json
+C:\Users\f18ra\source\repos\Task_2_Students\Task_2_Students\bin\Debug\netcoreapp3.1\Task_2_Students.dll
+C:\Users\f18ra\source\repos\Task_2_Students\Task_2_Students\bin\Debug\netcoreapp3.1\Task_2_Students.pdb
+C:\Users\f18ra\source\repos\Task_2_Students\Task_2_Students\obj\Debug\netcoreapp3.1\Task_2_Students.dll
+C:\Users\f18ra\source\repos\Task_2_Students\Task_2_Students\obj\Debug\netcoreapp3.1\Task_2_Students.pdb
+C:\Users\f18ra\source\repos\Task_2_Students\Task_2_Students\obj\Debug\netcoreapp3.1\Task_2_Students.genruntimeconfig.cache
