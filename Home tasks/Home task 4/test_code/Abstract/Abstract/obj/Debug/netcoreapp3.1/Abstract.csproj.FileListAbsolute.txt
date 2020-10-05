@@ -1,0 +1,13 @@
+C:\Users\f18ra\source\repos\Abstract\Abstract\bin\Debug\netcoreapp3.1\Abstract.exe
+C:\Users\f18ra\source\repos\Abstract\Abstract\bin\Debug\netcoreapp3.1\Abstract.deps.json
+C:\Users\f18ra\source\repos\Abstract\Abstract\bin\Debug\netcoreapp3.1\Abstract.runtimeconfig.json
+C:\Users\f18ra\source\repos\Abstract\Abstract\bin\Debug\netcoreapp3.1\Abstract.runtimeconfig.dev.json
+C:\Users\f18ra\source\repos\Abstract\Abstract\bin\Debug\netcoreapp3.1\Abstract.dll
+C:\Users\f18ra\source\repos\Abstract\Abstract\bin\Debug\netcoreapp3.1\Abstract.pdb
+C:\Users\f18ra\source\repos\Abstract\Abstract\obj\Debug\netcoreapp3.1\Abstract.csprojAssemblyReference.cache
+C:\Users\f18ra\source\repos\Abstract\Abstract\obj\Debug\netcoreapp3.1\Abstract.AssemblyInfoInputs.cache
+C:\Users\f18ra\source\repos\Abstract\Abstract\obj\Debug\netcoreapp3.1\Abstract.AssemblyInfo.cs
+C:\Users\f18ra\source\repos\Abstract\Abstract\obj\Debug\netcoreapp3.1\Abstract.csproj.CoreCompileInputs.cache
+C:\Users\f18ra\source\repos\Abstract\Abstract\obj\Debug\netcoreapp3.1\Abstract.dll
+C:\Users\f18ra\source\repos\Abstract\Abstract\obj\Debug\netcoreapp3.1\Abstract.pdb
+C:\Users\f18ra\source\repos\Abstract\Abstract\obj\Debug\netcoreapp3.1\Abstract.genruntimeconfig.cache
