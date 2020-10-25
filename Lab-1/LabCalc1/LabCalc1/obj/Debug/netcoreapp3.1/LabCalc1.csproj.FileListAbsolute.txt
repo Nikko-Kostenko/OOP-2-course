@@ -1,0 +1,16 @@
+C:\Users\f18ra\source\repos\LabCalc1\LabCalc1\bin\Debug\netcoreapp3.1\LabCalc1.exe
+C:\Users\f18ra\source\repos\LabCalc1\LabCalc1\bin\Debug\netcoreapp3.1\LabCalc1.deps.json
+C:\Users\f18ra\source\repos\LabCalc1\LabCalc1\bin\Debug\netcoreapp3.1\LabCalc1.runtimeconfig.json
+C:\Users\f18ra\source\repos\LabCalc1\LabCalc1\bin\Debug\netcoreapp3.1\LabCalc1.runtimeconfig.dev.json
+C:\Users\f18ra\source\repos\LabCalc1\LabCalc1\bin\Debug\netcoreapp3.1\LabCalc1.dll
+C:\Users\f18ra\source\repos\LabCalc1\LabCalc1\bin\Debug\netcoreapp3.1\LabCalc1.pdb
+C:\Users\f18ra\source\repos\LabCalc1\LabCalc1\obj\Debug\netcoreapp3.1\LabCalc1.csprojAssemblyReference.cache
+C:\Users\f18ra\source\repos\LabCalc1\LabCalc1\obj\Debug\netcoreapp3.1\LabCalc1.csproj.GenerateResource.cache
+C:\Users\f18ra\source\repos\LabCalc1\LabCalc1\obj\Debug\netcoreapp3.1\LabCalc1.AssemblyInfoInputs.cache
+C:\Users\f18ra\source\repos\LabCalc1\LabCalc1\obj\Debug\netcoreapp3.1\LabCalc1.AssemblyInfo.cs
+C:\Users\f18ra\source\repos\LabCalc1\LabCalc1\obj\Debug\netcoreapp3.1\LabCalc1.dll
+C:\Users\f18ra\source\repos\LabCalc1\LabCalc1\obj\Debug\netcoreapp3.1\LabCalc1.pdb
+C:\Users\f18ra\source\repos\LabCalc1\LabCalc1\obj\Debug\netcoreapp3.1\LabCalc1.genruntimeconfig.cache
+C:\Users\f18ra\source\repos\LabCalc1\LabCalc1\obj\Debug\netcoreapp3.1\LabCalc1.Properties.Resources.resources
+C:\Users\f18ra\source\repos\LabCalc1\LabCalc1\obj\Debug\netcoreapp3.1\LabCalc1.MainForm.resources
+C:\Users\f18ra\source\repos\LabCalc1\LabCalc1\obj\Debug\netcoreapp3.1\LabCalc1.csproj.CoreCompileInputs.cache
