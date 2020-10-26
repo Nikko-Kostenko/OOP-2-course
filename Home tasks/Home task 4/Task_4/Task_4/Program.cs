@@ -18,6 +18,8 @@ namespace Task_4
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Geometry());
+
+
         }
     }
 }
