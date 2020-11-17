@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<scientistsDatabase>
+  <faculty FC_NAME ="Faculty of computer science and cybernetics" >
+
+    <cathedra CT_NAME ="ТТП " >
+
+      <scientist  SC_NAME="ШКІЛЬНЯК СТЕПАН СТЕПАНОВИЧ" SC_POST="Професор" SC_WORKED_TIME="40" >
+      </scientist>
+
+      <scientist  SC_NAME="ЗУБЕНКО ВІТАЛІЙ ВОЛОДИМИРОВИЧ" SC_POST="Доцент" SC_WORKED_TIME="23" >
+      </scientist>
+
+      <scientist  SC_NAME="ОМЕЛЬЧУК ЛЮДМИЛА ЛЕОНІДІВНА" SC_POST="Доцент" SC_WORKED_TIME="11" >
+      </scientist>
+
+      <scientist  SC_NAME="РУСІНА НАТАЛІЯ ГЕННАДІЇВНА" SC_POST="Асистент" SC_WORKED_TIME="1" >
+      </scientist>
+
+
+    </cathedra>
+
+    <cathedra  CT_NAME ="ТК " >
+
+      <scientist SC_NAME="СТАВРОВСЬКИЙ АНДРІЙ БОРИСОВИЧ" SC_POST="Доцент" SC_WORKED_TIME="30">
+      </scientist>
+
+      <scientist  SC_NAME="ТРОХИМЧУК РОСТИСЛАВ МИКОЛАЙОВИЧ" SC_POST="Доцент" SC_WORKED_TIME="34" >
+      </scientist>
+
+      <scientist  SC_NAME="КОВАЛЬ ЮРІЙ ВІТАЛІЙОВИЧ" SC_POST="Асистент" SC_WORKED_TIME="18" >
+      </scientist>
+
+      <scientist  SC_NAME="КАРНАУХ ТЕТЯНА ОЛЕКСАНДРІВНА" SC_POST="Доцент" SC_WORKED_TIME="14" >
+      </scientist>
+
+    </cathedra>
+
+    <cathedra  CT_NAME ="МІ "  >
+
+      <scientist  SC_NAME="АНІСІМОВ АНАТОЛІЙ ВАСИЛЬОВИЧ" SC_POST="Декан факультету" SC_WORKED_TIME="35" >
+      </scientist>
+
+      <scientist  SC_NAME="КУЛЯБКО ПЕТРО ПЕТРОВИЧ" SC_POST="Доцент" SC_WORKED_TIME="21" >
+      </scientist>
+
+      <scientist  SC_NAME="МАРЧЕНКО ОЛЕКСАНДР ОЛЕКСАНДРОВИЧ" SC_POST="Професор" SC_WORKED_TIME="13" >
+      </scientist>
+
+      <scientist  SC_NAME="ТАРАНУХА ВОЛОДИМИР ЮРІЙОВИЧ" SC_POST="Асистент" SC_WORKED_TIME="8" >
+      </scientist>
+      
+    </cathedra>
+
+  </faculty>
+
+  <faculty  FC_NAME ="Faculty of information technology">
+
+
+  </faculty>
+
+</scientistsDatabase>
