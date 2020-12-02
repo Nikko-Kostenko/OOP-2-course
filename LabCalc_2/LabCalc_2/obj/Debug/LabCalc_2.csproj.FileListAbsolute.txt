@@ -1,0 +1,10 @@
+C:\Users\f18ra\source\repos\LabCalc_2\LabCalc_2\bin\Debug\LabCalc_2.exe.config
+C:\Users\f18ra\source\repos\LabCalc_2\LabCalc_2\bin\Debug\LabCalc_2.exe
+C:\Users\f18ra\source\repos\LabCalc_2\LabCalc_2\bin\Debug\LabCalc_2.pdb
+C:\Users\f18ra\source\repos\LabCalc_2\LabCalc_2\obj\Debug\LabCalc_2.csprojAssemblyReference.cache
+C:\Users\f18ra\source\repos\LabCalc_2\LabCalc_2\obj\Debug\LabCalc_2.Form1.resources
+C:\Users\f18ra\source\repos\LabCalc_2\LabCalc_2\obj\Debug\LabCalc_2.Properties.Resources.resources
+C:\Users\f18ra\source\repos\LabCalc_2\LabCalc_2\obj\Debug\LabCalc_2.csproj.GenerateResource.cache
+C:\Users\f18ra\source\repos\LabCalc_2\LabCalc_2\obj\Debug\LabCalc_2.csproj.CoreCompileInputs.cache
+C:\Users\f18ra\source\repos\LabCalc_2\LabCalc_2\obj\Debug\LabCalc_2.exe
+C:\Users\f18ra\source\repos\LabCalc_2\LabCalc_2\obj\Debug\LabCalc_2.pdb
