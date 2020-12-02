@@ -1,0 +1,7 @@
+socket was created :: 2020-12-01 23:56:23.507450
+User <127.0.0.1> connected! :: 2020-12-01 23:56:26.235184
+command calculate was invoked :: 2020-12-01 23:56:31.680876
+command calculate was not executed :: 2020-12-01 23:56:33.073786
+command was incorrect :: 2020-12-01 23:56:34.278845
+command calculate was invoked :: 2020-12-01 23:56:39.230999
+command calculate was not executed :: 2020-12-01 23:56:42.519887
