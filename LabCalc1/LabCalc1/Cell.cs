@@ -9,23 +9,34 @@ namespace LabCalc1
     {
         private DataGridViewCell mainCell;
 
-        private string name;
+        private string _name;
         private double _value;
-        private string exp;
+        private string _exp;
+        public List<Cell> DownCells;
+        public List<Cell> UpperCells;
+        
+
         public string Exp
         {
             set
             {
-                exp = value;
+                _exp = value;
             }
             get
             {
-                return exp;
+                return _exp;
             }
         }
 
-        private List<string> ForwardingList;
-        private List<string> UsedList;
+        public string Name
+        {
+            get
+            {
+                return _name;
+            }
+        }
+
+       
 
         public double Value
         {
@@ -48,16 +59,18 @@ namespace LabCalc1
 
         public Cell(DataGridViewCell MainCell, string Name, string Exp)
         {
-            name = Name;
+            _name = Name;
             mainCell = MainCell;
-            exp = Exp;
+            _exp = Exp;
             _value = 0;
+            DownCells = new List<Cell>();
+            UpperCells = new List<Cell>();
 
         }
 
         Cell()
         {
-            name = "";
+            _name = "";
         }
 
        

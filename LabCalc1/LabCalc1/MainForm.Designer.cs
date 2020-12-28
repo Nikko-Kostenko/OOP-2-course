@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolMenuFileItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolMenuOpenItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolMenuSaveItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolMenuOpenItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolMenuPropertiesItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolMenuHelpItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolMenuDevInfoItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -67,24 +67,26 @@
             // toolMenuFileItem
             // 
             this.toolMenuFileItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolMenuOpenItem,
             this.toolMenuSaveItem,
+            this.toolMenuOpenItem,
             this.toolMenuPropertiesItem});
             this.toolMenuFileItem.Name = "toolMenuFileItem";
             this.toolMenuFileItem.Size = new System.Drawing.Size(37, 20);
             this.toolMenuFileItem.Text = "File";
-            // 
-            // toolMenuOpenItem
-            // 
-            this.toolMenuOpenItem.Name = "toolMenuOpenItem";
-            this.toolMenuOpenItem.Size = new System.Drawing.Size(116, 22);
-            this.toolMenuOpenItem.Text = "Open ";
             // 
             // toolMenuSaveItem
             // 
             this.toolMenuSaveItem.Name = "toolMenuSaveItem";
             this.toolMenuSaveItem.Size = new System.Drawing.Size(116, 22);
             this.toolMenuSaveItem.Text = "Save";
+            this.toolMenuSaveItem.Click += new System.EventHandler(this.toolMenuSaveItem_Click);
+            // 
+            // toolMenuOpenItem
+            // 
+            this.toolMenuOpenItem.Name = "toolMenuOpenItem";
+            this.toolMenuOpenItem.Size = new System.Drawing.Size(116, 22);
+            this.toolMenuOpenItem.Text = "Open ";
+            this.toolMenuOpenItem.Click += new System.EventHandler(this.toolMenuOpenItem_Click);
             // 
             // toolMenuPropertiesItem
             // 
@@ -97,6 +99,7 @@
             this.toolMenuHelpItem.Name = "toolMenuHelpItem";
             this.toolMenuHelpItem.Size = new System.Drawing.Size(44, 20);
             this.toolMenuHelpItem.Text = "Help";
+            this.toolMenuHelpItem.Click += new System.EventHandler(this.toolMenuHelpItem_Click);
             // 
             // toolMenuDevInfoItem
             // 
@@ -222,6 +225,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.Text = "MyCalc";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.toolStrip.ResumeLayout(false);

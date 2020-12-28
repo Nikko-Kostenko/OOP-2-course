@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.Eventing.Reader;
+using System.Threading;
 using System.Windows.Forms;
 
 /* 
@@ -10,10 +12,8 @@ namespace LabCalc1
 {
 
     class Rpn
-    {
-        private const string EROR_TOO_MANY_OPERATORS = "забагато операторів підряд";
-       
-         static private bool IsSeparate(char s)
+    {    
+         private static bool IsSeparate(char s)
          {
              if ((" =".IndexOf(s) != -1))
              {
@@ -23,7 +23,7 @@ namespace LabCalc1
              return false;
          }
 
-         static private bool IsOneSymbolOperator(char s)
+         private static bool IsOneSymbolOperator(char s)
          {
              if (("+-/*^()".IndexOf(s) != -1))
              {
@@ -33,7 +33,7 @@ namespace LabCalc1
              return false;
          }
 
-         static private bool IsThreeSymbolOperator( string input, int k)
+         private static bool IsThreeSymbolOperator( string input, int k)
          {
             
              if ("mdi".IndexOf(input[k]) != -1)
@@ -49,7 +49,7 @@ namespace LabCalc1
              return false;
          }
          
-         static private bool IsCellName(string input, int i)
+         public static bool IsCellName(string input, int i)
          {
              if (input[i].Equals('C') && char.IsDigit(input[i + 1]) && input[i + 2].Equals('R') && char.IsDigit(input[i + 3]))
              {
@@ -59,7 +59,53 @@ namespace LabCalc1
              return false;
          }
 
-         static private char GetShortOpSignature(char c1, char c2)
+         private static bool IsUnaryMinus(string input, int i)
+         {
+             if (input[i].Equals('-'))
+             {
+                 int k = i - 3;
+                 if (i.Equals(0) || input[i - 1].Equals('(') || IsOneSymbolOperator(input[i - 1]))
+                 {
+                     return true;
+                 }
+                 else if (k > 0 && IsThreeSymbolOperator(input, k))
+                 {
+                     return true;
+                 }
+             }
+
+             return false;
+         }
+
+         private static double GetCellValue(string input, int i, DataGridView table)
+         {
+            int column = ToInt(input[i + 1]);
+            int row = ToInt(input[i + 3]);
+            if (table[column - 1, row - 1].Value != null)
+            {
+                return ToDouble(table[column - 1, row - 1].Value.ToString());
+            }
+            else
+            {
+                return 0;
+            }
+         }
+
+         private static double GetNameCellValue(string input, DataGridView table)
+         {
+             int column = ToInt(input[ 1]);
+             int row = ToInt(input[3]);
+             if (table[column - 1, row - 1].Value != null)
+             {
+                 return ToDouble(table[column - 1, row - 1].Value.ToString());
+             }
+             else
+             {
+                 return 0;
+             }
+         }
+
+        private static char GetShortOpSignature(char c1, char c2)
          {
              if (c1.Equals('d'))
              {
@@ -76,55 +122,78 @@ namespace LabCalc1
              return c1;
          }
 
-        public static int ToInt( char c)
-         {
-             return (int)(c - '0');
-         }
-
-        public static double ToDouble(string c)
-        {
-            return Convert.ToDouble(c);
-        }
-
-        static private byte GetPriority(char s)
+         private static byte GetPriority(char s)
          {
              switch (s)
              {
                  case '(': return 0;
                  case ')': return 1;
-                 case '+': return 4; 
+                 case '+': return 4;
                  case 'd': return 3; //dec
-                 case 'i': return 2; //inc
+                 case 'n': return 2; //inc
                  case '-': return 5;
                  case '*': return 6;
                  case '/': return 6;
                  case 'm': return 7; //mod
-                 case 'e': return 7; //div
+                 case 'i': return 7; //div
                  case '^': return 8;
                  default: return 9;
              }
          }
 
-          public static double Calculate(string input, DataGridView table)
+         public static int ToInt( char c)
          {
-             string output = GetExpression(input, table);
-             double result = Counting(output);
-             return result;
+             return (int)(c - '0');
+         }
+
+         public static double ToDouble(string c)
+        {
+            return Convert.ToDouble(c);
         }
 
-        static private string GetExpression(string input, DataGridView Table)
-        {
+         //---Main---Functions---------------------------------------------------------------------
+
+
+         //Calculates---Public---Function---To---Get---Cell---Value--------------------------------
+
+         public static double Calculate(string input, DataGridView table, Cell cell)
+         {
+             List<string> names = new List<string>();
+             string output = GetExpression(input,ref names, cell, table);
+
+             if (!dataManager.CheckRecursion(cell))
+             {
+                 dataManager.updateCellReference(cell, table, names);
+                 double result = Counting(output);
+                 return result;
+             }
+             else
+             {
+                 cell.Exp = string.Empty;
+                 cell.Value = 0;
+                dataManager.deleteCellReferences(cell);
+                MessageBox.Show("ошибка рекурсии");
+             }
+             
+             return 0;
+         }
+
+
+         //Takes---String---&---Table---To---Get--Reverse-Polish-Anotation-------------------------
+         private static string GetExpression(string input,ref List<string> names, Cell cell, DataGridView table)
+         {
+            
              string output = string.Empty;
              Stack<char> opStack = new Stack<char>();
 
-             for (int i = 0; i < input.Length; i++)
+             for (int i = 0; i < input.Length; i++) // analyzing every symbol
              {
-                 if (IsSeparate(input[i]))
+                 if (IsSeparate(input[i]))// '=' is a saparate symbol
                  {
                      continue;
                  }
 
-                 if (Char.IsDigit(input[i]))
+                 if (Char.IsDigit(input[i])) //'0-9' values symbols
                  {
                      while (!IsSeparate(input[i]) && !IsOneSymbolOperator(input[i]) &&
                             !IsThreeSymbolOperator(input, i))
@@ -141,13 +210,13 @@ namespace LabCalc1
                      i--;
                  }
 
-                 if (IsOneSymbolOperator(input[i]) || IsThreeSymbolOperator(input, i))
+                 if (IsOneSymbolOperator(input[i]) || IsThreeSymbolOperator(input, i))//operators
                  {
-                     if (input[i] == '(')
+                     if (input[i] == '(')//for '(' symbol
                      {
                          opStack.Push(input[i]);
                      }
-                     else if (input[i] == ')')
+                     else if (input[i] == ')')//for ')' symbol. All symbols between '(' and ')' wil have higher priority
                      {
                          char s = opStack.Pop();
                          while (s != '(')
@@ -156,49 +225,60 @@ namespace LabCalc1
                              s = opStack.Pop();
                          }
                      }
-                    /* else if (input[i].Equals('-'))
+                     else if (IsUnaryMinus(input, i))//For unary minus before numbers or cells names
                      {
-                         if (UnaryMinus(input, i) || char.IsDigit(input[i+1]))
-                         {
-                             output += "-";
-                             while ((i < (input.Length - 1))  && char.IsDigit(input[i+1]))
+                         i++;
+                         if (!IsCellName(input, i)) //for numbers
+                         { 
+                             output += "0 ";
+                             while (char.IsDigit(input[i]))
                              {
-                                 output += input[i + 1];
+                                 output += input[i];
                                  i++;
+                                 if (i == input.Length) break;
                              }
-
-                             output += " ";
+                             output += " -";
                          }
-                     }*/
+                         else
+                         {
+                            output += "0 ";
+                            output += GetCellValue(input, i, table);
+                            string name = input[i].ToString() + input[i + 1].ToString() + input[i + 2].ToString() +
+                                          input[i + 3].ToString();
+                            names.Add(name);
+                            cell.DownCells.Add(dataManager.GetCell(name, table));
+                            output += " -";
+                        }
+                     }
                      else
                      {
-                             if (opStack.Count > 0 && GetPriority(GetShortOpSignature(input[i], input[i + 1])) <
+                         if (opStack.Count > 0 && GetPriority(GetShortOpSignature(input[i], input[i + 1])) <
                              GetPriority(opStack.Peek()))
-                             {
-                                 output += opStack.Pop().ToString() + " ";
-                                 opStack.Push(GetShortOpSignature(input[i], input[i + 1]));
-                             }
-                             else
-                             {
-                                 opStack.Push(GetShortOpSignature(input[i], input[i + 1]));
-                             }
+                         {
+                             output += opStack.Pop().ToString() + " ";
+                             opStack.Push(GetShortOpSignature(input[i], input[i + 1]));
+                         }
+                         else
+                         {
+                             opStack.Push(GetShortOpSignature(input[i], input[i + 1]));
+                         }
                      }
 
-                     if (IsThreeSymbolOperator(input, i))
+                     if (!(i >= input.Length) && IsThreeSymbolOperator(input, i))
                      {
                          i = i + 2;
                      }
                  }
                  
-                if (IsCellName(input, i))
-                {
-                    int column = ToInt(input[i + 1]);
-                    int row = ToInt(input[i + 3]);
+                 if (!(i >= input.Length) && IsCellName(input, i))
+                 {
+                     output += GetCellValue(input, i, table) + " ";
+                     string name = input[i].ToString() + input[i + 1].ToString() + input[i + 2].ToString() +
+                                   input[i + 3].ToString();
+                     names.Add(name);
+                    cell.DownCells.Add(dataManager.GetCell(name, table));
 
-
-                     output += ToDouble(Table[column-1, row-1].Value.ToString());
-                     output += " ";
-                     i = i + 3;
+                    i = i + 3;
                  }
              }
 
@@ -208,24 +288,12 @@ namespace LabCalc1
              }
 
              return output;
-        }
+         }
 
-        static private bool UnaryMinus(string input, int i)
-        {
-            int k = i - 3;
-            if (input[i-1].Equals('0') || input[i-1].Equals('(') || IsOneSymbolOperator(input[i-1])) 
-            {
-                return true;
-            }
-            else if(k > 0 && IsThreeSymbolOperator(input, k))
-            {
-                return true;
-            }
 
-            return false;
-        }
+        //Takes---Genered---Reverse-Polish-Anotation---&---Calculates---Value----------------------
 
-        static private double Counting(string input)
+        private static double Counting(string input)
         {
             Stack<double> temp = new Stack<double>();
             double result = 0;
@@ -284,9 +352,11 @@ namespace LabCalc1
                                 result = b % a;
                                 break;
                             case 'i':
-                                int k;
-                                k = (int)(b / a);
-                                result = (double) (k);
+                                int m = (int) b;
+                                int n = (int) a;
+                                int difResult;
+                                Math.DivRem(m, n, out difResult);
+                                result = difResult;
                                 break;
                         }
                     }
@@ -314,5 +384,6 @@ namespace LabCalc1
             }
             return temp.Peek();
         }
+
      }
 }
